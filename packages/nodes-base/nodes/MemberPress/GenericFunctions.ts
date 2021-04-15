@@ -22,15 +22,12 @@ export async function memberPressApiRequest(this: IExecuteFunctions | IExecuteSi
 		headers: {
 			Accept: 'application/json',
 			'Content-Type': 'application/json',
-		},
-		auth: {
-			user: credentials!.username as string,
-			password: credentials!.password as string,
+			'MEMBERPRESS-API-KEY': credentials!.apiKey as string,
 		},
 		method,
 		qs,
 		body,
-		uri: uri || `${credentials!.url}/wp-json/wp/v2${resource}`,
+		uri: uri || `${url}/wp-json/mp/v1${resource}`,
 		json: true,
 	};
 	options = Object.assign({}, options, option);
@@ -45,7 +42,7 @@ export async function memberPressApiRequest(this: IExecuteFunctions | IExecuteSi
 			errorMessage = error.response.body.message || error.response.body.Message || error.message;
 		}
 
-		throw new Error('MemberPress Error: ' + errorMessage);
+		throw new Error('Wordpress Error: ' + errorMessage);
 	}
 }
 

@@ -149,6 +149,7 @@
       "dist/credentials/MauticOAuth2Api.credentials.js",
       "dist/credentials/MediumApi.credentials.js",
       "dist/credentials/MediumOAuth2Api.credentials.js",
+      "dist/credentials/MmemberPressApi.credentials.js",
       "dist/credentials/MessageBirdApi.credentials.js",
       "dist/credentials/MicrosoftExcelOAuth2Api.credentials.js",
       "dist/credentials/MicrosoftOAuth2Api.credentials.js",
