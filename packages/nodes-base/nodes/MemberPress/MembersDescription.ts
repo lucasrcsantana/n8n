@@ -18,11 +18,11 @@ export const membersOperations = [
 				value: 'create',
 				description: 'Create a member',
 			},
-			// {
-			// 	name: 'Delete',
-			// 	value: 'delete',
-			// 	description: 'Delete a member',
-			// },
+			{
+				name: 'Delete',
+			 	value: 'delete',
+			 	description: 'Delete a member',
+			},
 			{
 				name: 'Get',
 				value: 'get',
@@ -547,8 +547,8 @@ export const membersFields = [
 /*                                 member:delete                                */
 /* -------------------------------------------------------------------------- */
 	{
-		displayName: 'Reassign',
-		name: 'reassign',
+		displayName: 'User ID',
+		name: 'userId',
 		type: 'string',
 		required: true,
 		default: '',
@@ -562,6 +562,6 @@ export const membersFields = [
 				],
 			},
 		},
-		description: `Reassign the deleted member's posts and links to this member ID.`,
+		description: `Member ID to delete.`,
 	},
 ] as INodeProperties[];

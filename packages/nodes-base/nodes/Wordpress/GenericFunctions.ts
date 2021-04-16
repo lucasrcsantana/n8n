@@ -12,7 +12,7 @@ import {
 	IDataObject,
 } from 'n8n-workflow';
 
-export async function memberPressApiRequest(this: IExecuteFunctions | IExecuteSingleFunctions | ILoadOptionsFunctions, method: string, resource: string, body: any = {}, qs: IDataObject = {}, uri?: string, option: IDataObject = {}): Promise<any> { // tslint:disable-line:no-any
+export async function wordpressApiRequest(this: IExecuteFunctions | IExecuteSingleFunctions | ILoadOptionsFunctions, method: string, resource: string, body: any = {}, qs: IDataObject = {}, uri?: string, option: IDataObject = {}): Promise<any> { // tslint:disable-line:no-any
 	const credentials = this.getCredentials('memberPressApi');
 	if (credentials === undefined) {
 		throw new Error('No credentials got returned!');
@@ -49,7 +49,7 @@ export async function memberPressApiRequest(this: IExecuteFunctions | IExecuteSi
 	}
 }
 
-export async function memberPressApiRequestAllItems(this: IExecuteFunctions | ILoadOptionsFunctions, method: string, endpoint: string, body: any = {}, query: IDataObject = {}): Promise<any> { // tslint:disable-line:no-any
+export async function wordpressApiRequestAllItems(this: IExecuteFunctions | ILoadOptionsFunctions, method: string, endpoint: string, body: any = {}, query: IDataObject = {}): Promise<any> { // tslint:disable-line:no-any
 
 	const returnData: IDataObject[] = [];
 
@@ -60,7 +60,7 @@ export async function memberPressApiRequestAllItems(this: IExecuteFunctions | IL
 
 	do {
 		query.page++;
-		responseData = await memberPressApiRequest.call(this, method, endpoint, body, query, undefined, { resolveWithFullResponse: true });
+		responseData = await wordpressApiRequest.call(this, method, endpoint, body, query, undefined, { resolveWithFullResponse: true });
 		returnData.push.apply(returnData, responseData.body);
 	} while (
 		responseData.headers['x-wp-totalpages'] !== undefined &&

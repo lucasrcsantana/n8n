@@ -27,7 +27,7 @@ export async function memberPressApiRequest(this: IExecuteFunctions | IExecuteSi
 		method,
 		qs,
 		body,
-		uri: uri || `${url}/wp-json/mp/v1${resource}`,
+		uri: uri || `${credentials!.url}/wp-json/mp/v1${resource}`,
 		json: true,
 	};
 	options = Object.assign({}, options, option);
