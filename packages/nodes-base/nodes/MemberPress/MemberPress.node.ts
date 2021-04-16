@@ -17,26 +17,26 @@ import {
 } from './GenericFunctions';
 
 import {
-	membersFields,
-	membersOperations,
-} from './MembersDescription';
-import { IMembers } from './MembersInterface';
+	memberFields,
+	memberOperations,
+} from './MemberDescription';
+import { IMember } from './MemberInterface';
 
 /*
 import {
-	membershipsFields,
-	membershipsOperations,
-} from './MembershipsDescription';
+	membershipFields,
+	membershipOperations,
+} from './MemberhipsDescription';
 
 import {
-	subscriptionsFields,
-	subscriptionsOperations,
-} from './SubscriptionsDescription';
+	subscriptionFields,
+	subscriptionOperations,
+} from './SubscriptionDescription';
 
 import {
-	transactionsFields,
-	transactionsOperations,
-} from './TransactionsDescription';
+	transactionFields,
+	transactionOperations,
+} from './TransactionDescription';
 */
 
 export class MemberPress implements INodeType {
@@ -69,35 +69,35 @@ export class MemberPress implements INodeType {
 				type: 'options',
 				options: [
 					{
-						name: 'Members',
-						value: 'members',
+						name: 'Member',
+						value: 'member',
 					},
 					{
-						name: 'Memberships',
-						value: 'memberships',
+						name: 'Membership',
+						value: 'membership',
 					},
 					{
-						name: 'Transactions',
-						value: 'transactions',
+						name: 'Transaction',
+						value: 'transaction',
 					},
 					{
-						name: 'Subscriptions',
-						value: 'subscriptions',
+						name: 'Subscription',
+						value: 'subscription',
 					},
 				],
-				default: 'members',
+				default: 'member',
 				required: true,
 				description: 'Resource to consume',
 			},
-			...membersOperations,
-			...membersFields,
+			...memberOperations,
+			...memberFields,
 			/*
-			...transactionsOperations,
-			...transactionsFields,
-			...subscriptionsOperations,
-			...subscriptionsFields,
-			...membershipsOperations,
-			...membershipsFields,
+			...transactionOperations,
+			...transactionFields,
+			...subscriptionOperations,
+			...subscriptionFields,
+			...membershipOperations,
+			...membershipFields,
 			*/
 
         ],
@@ -115,7 +115,7 @@ export class MemberPress implements INodeType {
 
 		for (let i = 0; i < length; i++) {
 
-			if (resource === 'members') {
+			if (resource === 'member') {
 				//https://developer.wordpress.org/rest-api/reference/members/#create-a-user
 				if (operation === 'create') {
 					const name = this.getNodeParameter('name', i) as string;
@@ -125,7 +125,7 @@ export class MemberPress implements INodeType {
 					const email = this.getNodeParameter('email', i) as string;
 					const password = this.getNodeParameter('password', i) as string;
 					const additionalFields = this.getNodeParameter('additionalFields', i) as IDataObject;
-					const body: IMembers = {
+					const body: IMember = {
 						name,
 						username,
 						first_name: firstName,
@@ -151,7 +151,7 @@ export class MemberPress implements INodeType {
 				if (operation === 'update') {
 					const userId = this.getNodeParameter('userId', i) as number;
 					const updateFields = this.getNodeParameter('updateFields', i) as IDataObject;
-					const body: IMembers = {
+					const body: IMember = {
 						id: userId,
 					};
 					if (updateFields.name) {

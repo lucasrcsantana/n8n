@@ -1,6 +1,6 @@
 import { INodeProperties } from 'n8n-workflow';
 
-export const membersOperations = [
+export const memberOperations = [
 	{
 		displayName: 'Operation',
 		name: 'operation',
@@ -8,7 +8,7 @@ export const membersOperations = [
 		displayOptions: {
 			show: {
 				resource: [
-					'members',
+					'member',
 				],
 			},
 		},
@@ -44,7 +44,7 @@ export const membersOperations = [
 	},
 ] as INodeProperties[];
 
-export const membersFields = [
+export const memberFields = [
 
 /* -------------------------------------------------------------------------- */
 /*                                user:create                                 */
@@ -58,7 +58,7 @@ export const membersFields = [
 		displayOptions: {
 			show: {
 				resource: [
-					'members',
+					'member',
 				],
 				operation: [
 					'create',
@@ -76,7 +76,7 @@ export const membersFields = [
 		displayOptions: {
 			show: {
 				resource: [
-					'members',
+					'member',
 				],
 				operation: [
 					'create',
@@ -94,7 +94,7 @@ export const membersFields = [
 		displayOptions: {
 			show: {
 				resource: [
-					'members',
+					'member',
 				],
 				operation: [
 					'create',
@@ -112,7 +112,7 @@ export const membersFields = [
 		displayOptions: {
 			show: {
 				resource: [
-					'members',
+					'member',
 				],
 				operation: [
 					'create',
@@ -130,7 +130,7 @@ export const membersFields = [
 		displayOptions: {
 			show: {
 				resource: [
-					'members',
+					'member',
 				],
 				operation: [
 					'create',
@@ -148,7 +148,7 @@ export const membersFields = [
 		displayOptions: {
 			show: {
 				resource: [
-					'members',
+					'member',
 				],
 				operation: [
 					'create',
@@ -166,7 +166,7 @@ export const membersFields = [
 		displayOptions: {
 			show: {
 				resource: [
-					'members',
+					'member',
 				],
 				operation: [
 					'create',
@@ -219,7 +219,7 @@ export const membersFields = [
 		displayOptions: {
 			show: {
 				resource: [
-					'members',
+					'member',
 				],
 				operation: [
 					'update',
@@ -237,7 +237,7 @@ export const membersFields = [
 		displayOptions: {
 			show: {
 				resource: [
-					'members',
+					'member',
 				],
 				operation: [
 					'update',
@@ -332,7 +332,7 @@ export const membersFields = [
 		displayOptions: {
 			show: {
 				resource: [
-					'members',
+					'member',
 				],
 				operation: [
 					'get',
@@ -350,7 +350,7 @@ export const membersFields = [
 		displayOptions: {
 			show: {
 				resource: [
-					'members',
+					'member',
 				],
 				operation: [
 					'get',
@@ -391,7 +391,7 @@ export const membersFields = [
 	displayOptions: {
 		show: {
 			resource: [
-				'members',
+				'member',
 			],
 			operation: [
 				'getAll',
@@ -408,7 +408,7 @@ export const membersFields = [
 	displayOptions: {
 		show: {
 			resource: [
-				'members',
+				'member',
 			],
 			operation: [
 				'getAll',
@@ -434,7 +434,7 @@ export const membersFields = [
 	displayOptions: {
 		show: {
 			resource: [
-				'members',
+				'member',
 			],
 			operation: [
 				'getAll',
@@ -555,7 +555,7 @@ export const membersFields = [
 		displayOptions: {
 			show: {
 				resource: [
-					'members',
+					'member',
 				],
 				operation: [
 					'delete',
